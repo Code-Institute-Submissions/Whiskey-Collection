@@ -1,0 +1,324 @@
+<?xml version="1.0" standalone="no"?>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon support -->
+    <meta name="description" content="Whiskey-Collection">
+    <link rel="shortcut icon" href="img/ico.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ico32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/ico16x16.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Title -->
+    <title>Whiskey-Collection</title>
+    <!-- FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/dc.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <!-- pagepiling -->
+    <link rel="stylesheet" type="text/css" href="css/pagepiling.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navigation Bar (Filters) -->
+    <div class="nav bg-light" id="navbar">
+        <div class="nav-menu ">
+            <div class="orang">
+                <a href="javascript:void(0)" onclick="exitMenu()">&times;</a>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h4>Choose a filter and close the menu (click on the 'x' above) to apply it on the graphs</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid justify-content-between ">
+                <div class="row">
+                    <div class="col-md-4">
+                        Search by Country
+                        <form class="mx-4 my-2 btn btn-light" onkeyup="noDataMatch()" id="search">
+                        </form>
+                        <p>
+                            <p id="no_data_found_too"></p>
+                            <sub>Type in the country of your choice, no need to press 'enter'</sub>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class=" bg-light">Types of whiskey in alphabetical order</p>
+                        <button type="button" class="btn btn-outline-info mx-4" id="select-whisky-type"></button>
+                        <p>
+                            <sub>Choose Type</sub>
+                        </p>
+                    </div>
+                    <div id="btn-sm-view" class="col-md-4">
+                        <button type="button" class="btn btn-info" id="resetBtn">
+                            <span onclick="javascript:dc.filterAll(); dc.renderAll();">Reset All Filters</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation Bar End -->
+    <!-- Error message (small screens) -->
+    <div class="only-small-screens my-4 px-5 text-center">
+        <img src="img/ico32x32.ico" alt="whiskey" class="over-img" style="border: none"/> This site is best viewed on large screens - please come back again to learn more about whiskey!
+        <p class="pt-2">
+            <a role="button" href="https://github.com/albeeralkhawri/Whiskey-Collection/" class="btn btn-sm btn-outline-info">
+            Return to Github Project Page
+            </a>
+        </p>
+    </div>
+    <!-- Error Message End -->
+    <!-- Side Navigation Bar -->
+    <div class="p_sticky orang only-big-screens">
+        <span onclick="openMenu()">
+         <i class="fas fa-bars"></i>
+         </span>
+        <a href="#" onclick="javascript:dc.filterAll(); dc.renderAll();">
+            <i class="fas fa-sync"></i>
+        </a>
+    </div>
+    <!-- Side Navigation Bar End-->
+    <!-- Content -->
+    <div id="pagepiling">
+        <!-- welcome -->
+        <div class="section bg-warning" id="top-title" data-anchor="welcome_section">
+            <div class="container">
+                <div class="row d-flex justify-content-around mx-4 bg-whiskys2">
+                    <div class="col text-right">
+                        <h1 id="top_quote" class="pb-2">
+                        Whiskey Collection
+                     </h1>
+                    </div>
+                </div>
+                <div class="row text-center d-flex justify-content-around">
+                    <div class="col">
+                        <h4 id="project_id">Best Whiskey Group</h4>
+                    </div>
+                    <div class="col">
+                        <h5>Discover the whiskey types</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- introduction -->
+        <div class="section only-big-screens" id="second" data-anchor="introduction_section">
+            <div class="container align-center mt-5">
+                <div class="row py-3">
+                    <!-- Snippets about whiskys, alternating every 9 seconds -->
+                    <div class="col mb-3 text-center">
+                        <div class="alert bg-warning" id="whisky_quotes">
+                            <h2>Quotes About Whiskey from the Famous Drinkers Who Loved It Best</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col text-center">
+                    </div>
+                    <div class="col-lg-8 py-4">
+                        <!-- Introduction to the webpage's interactive aspects -->
+                        <div class="over-img p-3">
+                            <h2>
+                           Please click on the charts below to discover more different whiskey types you can discover in total.
+                        </h2>
+                            <p> You can navigate with your
+                                <strong>mouse</strong>, the
+                                <strong>arrows on your keyboard</strong> or a
+                                <strong>touchscreen</strong>.
+                            </p>
+                            <p>Each click on a chart adds or remove a filter to adjust your selection. Scroll down to review types listed in the datatable. When you are done, click the "Reset All" button or the button
+                                <i class="fas fa-sync"></i> to retrieve all of your options.
+                            </p>
+                            <p>The top-left hamburger menu leads to a filter selection as well. On the left-side of the screen, you'll see dots that indicate each section of the webpage. Consider them as navigation shortcuts if needed!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- piecharts -->
+        <div class="section" id="piecharts_section" data-anchor="piecharts_section">
+            <div class="container align-center only-big-screens ">
+                <div class="container-fluid pt-5">
+                    <div class="row justify-content-center">
+                        <!-- Pie chart -->
+                        <div class="col-lg-4 my-3">
+                            <h4 class="mb-4 title-chart">Categories</h4>
+                            <div id="piechart1" class="svg-container ">
+                            </div>
+                        </div>
+                        <!-- -->
+                        <div class="col-lg-4 my-3">
+                            <h4 class="mb-4 title-chart">Manufacturing countries</h4>
+                            <div id="piechart2" class="svg-container ">
+                            </div>
+                        </div>
+                        <!-- Pie chart relevant to the whisky's -->
+                        <div class="col-lg-4 my-3">
+                            <h4 class="mb-4 title-chart">Types</h4>
+                            <div id="piechart3" class="svg-container ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- barchart -->
+        <div class="section" id="fourth" data-anchor="barchart_section">
+            <div class="container align-center only-big-screens ">
+                <div class="row">
+                    <div class="col-lg-12 my-3">
+                        <h4 class="mb-4">Percentages by manufacturing countries</h4>
+                        <div id="barchart" class="my-3 svg-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- datatable -->
+        <div class="section pp-scrollable" id="Fifth" data-anchor="datatable_section">
+            <div class="container pt-5">
+                <div class="row pt-5">
+                    <!-- Filtered elements count -->
+                    <div class="col">
+                        <div id='count_field' class="ml-3">
+                            <span class='filter-count'></span> selected out of
+                            <span class='total-count'></span> records.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- Pagination -->
+                        <p class="ml-3">
+                            <span>Datatable displaying records </span>
+                            <span id="begin"></span> -
+                            <span id="end"></span>
+                            <input id="previous" class="btn btn-warning btn-sm ml-3" type="Button" value="Previous" onclick="javascript:last()" />
+                            <input id="next" class="btn  btn-outline-warning btn-sm" type="button" value="Next" onclick="javascript:next()" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <table id="datatable">
+                    </table>
+                    <div id="no_data_found"></div>
+                </div>
+            </div>
+        </div>
+        <!-- thank you -->
+        <div class="section" data-anchor="thank_you_section" id="thank_you_section">
+            <!-- Footer -->
+            <footer class="container mt-4 only-big-screens">
+                <div class="row bottom align-items-center bg-info">
+                    <div class="col-4 px-4 mt-4 ">
+                        <p>
+                            <button type="button" class="btn btn-warning btn-sm" id="disclaimer">Disclaimer</button>
+                        </p>
+                    </div>
+                    <div class="col-4 px-4 mt-4 text-center">
+                        <h1>
+                        Thank you!
+                     </h1>
+                        <p class="mt-2"> Send feedback to: <strong>alberhabib1993@gmail.com</strong></p>
+                    </div>
+                    <div>
+                        <!-- The Modal -->
+                        <div id="disclaimerModal" class="modal ">
+                            <!-- Modal content -->
+                            <div class="modal-content" id="VI">
+                                <div class="modal-header bg-info">
+                                    <span class="close">&times;</span>
+                                    <h2 class="mb-3">Disclaimer</h2>
+                                </div>
+                                <div class="container">
+                                    <div class="modal-body">
+                                        <p>If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at alberhabib1993@gmail.com
+                                        </p>
+                                        <p>"Whiskey-Collection" refers to the website and the contents hosted at
+                                            <strong><a href="https://albeeralkhawri.github.io/Whiskey-Collection/">https://albeeralkhawri.github.io/Whiskey-Collection/</a></strong>.
+                                        </p>
+                                        <p>All the information on this website - https://albeeralkhawri.github.io/Whiskey-Collection/ - is published in good faith and as an educational project only. Whiskey-Collection does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (Whiskey-Collection), is strictly at your own risk. Whiskey-Collection will not be liable for any losses and/or damages in connection with the use of our website.
+                                        </p>
+                                        <p>From our website, you can visit other websites by following hyperlinks to such external sites. While we strive to provide only quality links to useful and ethical websites, we have no control over the content and nature of these sites. These links to other websites do not imply a recommendation for all the content found on these sites. Site owners and content may change without notice and may occur before we have the opportunity to remove a link which may have gone 'bad'.
+                                        </p>
+                                        <p>Please be also aware that when you leave our website, other sites may have different privacy policies and terms which are beyond our control. Please be sure to check the Privacy Policies of these sites as well as their "Terms of Service" before engaging in any business or uploading any information.
+                                        </p>
+                                        <h2>Consent</h2>
+                                        <p>By using our website, you hereby consent to our disclaimer and agree to its terms.</p>
+                                        <h2>Update</h2>
+                                        <p>Should we update, amend or make any changes to this document, those changes will be prominently posted here.
+                                        </p>
+                                        <h2>Resources</h2>
+                                        <ul>
+                                            <li>
+                                                This Disclaimer was created at
+                                                <a href="https://disclaimergenerator.net#wizard"> World's Free Disclaimer Generator</a>.
+                                            </li>
+                                            <li>
+                                                <a href="https://github.com/gabyguedezh/whiskey-insights/blob/master/assets/data/whiskey-insight.csv" target="_blank">Data source</a> used for this project
+                                            </li>
+                                            <li>
+                                                Google fonts Open Sans & Concert One (
+                                                <a href="https://fonts.google.com/specimen/Courgette" target="_blank">link here</a> )
+                                            </li>
+                                            <li>
+                                                Bootstrap v.4.1 (
+                                                <a href="https://getbootstrap.com/" target="_blank">link here</a> )
+                                            </li>
+                                            <li>Bottom modal template (
+                                                <a href="https://www.w3schools.com/howto/howto_css_modals.asp" target="_blank">link here</a>)
+                                            </li>
+                                            <li>D3.js (
+                                                <a href="https://d3js.org" target="_blank">link here</a> ), DC.js (
+                                                <a href="https://dc-js.github.io/dc.js/" target="_blank">link here</a> ) and Crossfilter (
+                                                <a href="https://square.github.io/crossfilter/" target="_blank">link here</a> )
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modal-footer bg-info">
+                                    <h4 class="mb-3">Thank you for your time!</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 px-4 mt-4 text-right">
+                        <p>
+                            <a role="button" href="https://github.com/albeeralkhawri/Whiskey-Collection/" class="btn btn-sm btn-outline-light">
+                        Return to Github Project</a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer End -->
+        </div>
+    </div>
+    <!-- Content End -->
+    <!-- External JS libraries -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/crossfilter.min.js"></script>
+    <script src="js/dc.min.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="js/pagepiling.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+</body>
+
+</html>
