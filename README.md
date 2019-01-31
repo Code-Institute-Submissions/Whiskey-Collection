@@ -6,7 +6,7 @@ this project, I needed to build a data dashboard that visualizes a dataset of my
 Datasets can be found all over the web but are not always reliable  presented interestingly.
 In this case, I decided to pick a Whiskey subject and present it as simply, playfully as possible
 
-### <a href=""> *Whiskey-Collection* </a>
+### <a href="https://albeeralkhawri.github.io/Whiskey-Collection/"> *Whiskey-Collection* </a>
 
 ## Features
 - Page by page presentation of content for a better user experience (using pagePiling.js)
