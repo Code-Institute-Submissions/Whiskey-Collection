@@ -30,10 +30,6 @@ To ensure visitors would not miss out, I included a message to invite visitors b
 ## Process
  I wrote down user stories and created a wireframe before embarking on full-blown development.
 
-## The webpage's mockup
-* v1. [Wireframe here!](./dashboard.png)
-* v2. Updated [wireframe](./dashboard_v2.png) for powerpoint-like presentation
-
 ## Technologies used 
  Since my single-page application makes use of Bootstrap (a CSS frameworks) and other libraries, I created a vendor file to ensure a clear separation between the library code and my own code.
  
