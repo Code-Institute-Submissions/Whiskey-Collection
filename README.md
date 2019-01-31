@@ -138,4 +138,4 @@ This information has also been included (in fewer words) in the disclaimer porti
 
 Feel free to get in touch for feedback.
 
-<a href="https://mail.google.com/mail/u/0/#inbox?compose=new">**alberhabib1993@gmail.com**</a>
+<a href="mailto:alberhabib1993@gmail.com">**alberhabib1993@gmail.com**</a>
