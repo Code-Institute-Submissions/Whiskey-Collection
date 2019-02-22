@@ -6,7 +6,7 @@ this project, I needed to build a data dashboard that visualizes a dataset of my
 Datasets can be found all over the web but are not always reliable  presented interestingly.
 In this case, I decided to pick a Whiskey subject and present it as simply, playfully as possible
 
-### <a href=""> *Whiskey-Collection* </a>
+### <a href="https://albeeralkhawri.github.io/Whiskey-Collection/"> *Whiskey-Collection* </a>
 
 ## Features
 - Page by page presentation of content for a better user experience (using pagePiling.js)
@@ -29,10 +29,6 @@ To ensure visitors would not miss out, I included a message to invite visitors b
 
 ## Process
  I wrote down user stories and created a wireframe before embarking on full-blown development.
-
-## The webpage's mockup
-* v1. [Wireframe here!](./dashboard.png)
-* v2. Updated [wireframe](./dashboard_v2.png) for powerpoint-like presentation
 
 ## Technologies used 
  Since my single-page application makes use of Bootstrap (a CSS frameworks) and other libraries, I created a vendor file to ensure a clear separation between the library code and my own code.
@@ -142,4 +138,4 @@ This information has also been included (in fewer words) in the disclaimer porti
 
 Feel free to get in touch for feedback.
 
-<a href="https://mail.google.com/mail/u/0/#inbox?compose=new">**alberhabib1993@gmail.com**</a>
+<a href="mailto:alberhabib1993@gmail.com">**alberhabib1993@gmail.com**</a>
