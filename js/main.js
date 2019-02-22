@@ -130,7 +130,7 @@ function show_datatable(ndx) {
         format: function(d) {
           return (
             d["fun_fact"] +
-            '<div class="py-4"> <button class="btn btn-warning btn-sm my-4"><a style="color:white" target="_blank" href="https://www.google.com/search?q=' +
+            '<div class="py-4"> <button class="btn btn-warning btn-sm my-4"><a style="color:white" target="_blank" href="https://www.google.com/search?q=" ' +
             d["Name"] +
             '"> Learn more</a> </button></div>'
           );
@@ -166,10 +166,12 @@ function show_piechart1(ndx) {
     .renderLabel(true)
     .colors(
       d3.scaleOrdinal([
-        "#ef781d",
-        "#ef781dba",
-        "#ef781dba",
-        "#ffc19159"
+        "#FF7201",
+        "#FF8B2D",
+        "#FD9C4D",
+        "#FFAD6B",
+        "#FFC08D",
+        "#FFD7B6"
       ])
     )
     .title(function(d) {
@@ -205,13 +207,13 @@ function show_piechart2(ndx) {
     .radius(150)
     .renderLabel(true)
     .colors(
-      d3.scaleOrdinal([
-        "#fd0000",
-        "#ff0000bf",
-        "#fe09096e",
-        "#f4040442",
-        "#f400002e",
-        "#f17e1921"
+     d3.scaleOrdinal([
+        "#FF0101",
+        "#FF2828",
+        "#FF4A4A",
+        "#FF6868",
+        "#FF9090",
+        "#FFB5B5"
       ])
     )
     .title(function(d) {
@@ -248,10 +250,12 @@ function show_piechart3(ndx) {
     .renderLabel(true)
     .colors(
       d3.scaleOrdinal([
-        "#4cf501",
-        "#4cf501a3",
-        "#4cf50163",
-        "#4cf50129"
+        "#0F7E00",
+        "#27861B",
+        "#4A9540",
+        "#6DA865",
+        "#88B781",
+        "#ACCDA7"
       ])
     )
     .title(function(d) {

@@ -14,15 +14,15 @@ div.dc-chart{
 }
 .dc-chart rect.deselected{
     stroke:none;
-    fill:#ccc
+    
 }
 .dc-chart .pie-slice{
-    fill:#000000;
     font-size:12px;
-    cursor:pointer
+    fill:#f5f0f08c;
+    cursor:pointer;
 }
 .dc-chart .pie-slice.external{
-    fill:#000
+    fill:#000;
 }
 .dc-chart .pie-slice :hover,.dc-chart .pie-slice.highlight{
     fill-opacity:.8

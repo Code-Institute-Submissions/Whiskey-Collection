@@ -8,6 +8,7 @@ a{
     text-decoration: none;
     color: 	#000000;
 }
+
     
     h1,h2,h3,h4,h6,th{
     font-family: 'Kalam', cursive;
@@ -89,6 +90,18 @@ h4::after {
 }
 
 /* End background image*/
+
+/* overlay */
+.overlay {
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .50;
+}
+/*  End overlay */
 
 /* Header & Body Styling */
 
